@@ -1,0 +1,112 @@
+.avgwrapper {
+    width: 800px;
+    margin:2% auto;
+}
+
+h1 {
+    color:rgb(250, 248, 250);
+    position: relative;
+    margin:0px;
+}
+.formarea {
+  display:flex;
+  background: rgba(118, 108, 108, 0.481);
+  border-radius: 25px;
+  padding: 1.9em;
+  margin-top: 30px;
+/*  border-radius:80%; */
+  border: 3px solid rgba(14, 14, 15, 0.169);
+  box-shadow:4px 3px 6px 2px rgb(242, 253, 253); 
+  flex-direction: column-reverse;
+  align-items: stretch;
+}
+h3{
+    margin: 0px;
+    color: #fff;
+}
+
+.msgarea{
+    display:flex;
+    flex-direction: column;
+    order: 2;
+}
+
+.msgarea > textarea {
+    flex: 1;
+    min-width: 18em;
+    background: transparent;
+    color: #fff;
+    padding: 15px;
+    border: 2px solid white;
+    font-size: 18px;
+}
+
+.detailsarea {
+    flex: 1;
+    order: 1;
+    margin-right: 2em;
+}
+
+.detailsarea input {
+    width: 100%;
+    background: transparent; 
+    color: #fff;
+    border-radius: 40px;
+    border: 2px solid white;
+    font-size: 20px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+.detailsarea input,
+
+label {
+    color: #fff;
+    line-height: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    flex-direction:row ;
+}
+
+ul {
+    color: #fff;
+}
+.bot {
+    background-color:rgb(26, 26, 23);
+    color: whitesmoke;
+    padding-top: 1px;
+    cursor: pointer;
+    text-align: center;
+    padding: 8px 24px;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+    width: 150px;
+    align-self:center;
+}
+.bot:hover {
+    background-color:rgb(168, 168, 164);
+    color: black; 
+}
+.bot2 {
+    background-color:rgb(26, 26, 23);
+    color: whitesmoke;
+    padding-top: 1px;
+    cursor: pointer;
+    text-align: center;
+    padding: 8px 24px;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+    width: 150px;
+}
+.bot2:hover {
+    background-color:rgb(168, 168, 164);
+    color: black; 
+}
+
+ul {
+    list-style-type: none;
+}
+
+.error {
+    border: 3px solid red;
+    color:rgb(145, 6, 34);
+}
