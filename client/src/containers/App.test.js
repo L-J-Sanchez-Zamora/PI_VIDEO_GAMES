@@ -1,4 +1,23 @@
 import React from 'react';
+import { render, screen } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
+import App from './App';
+
+describe('App', () => {
+  test('renders without error', () => {
+    render(
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    );
+    const appElement = screen.getByTestId('app');
+    expect(appElement).toBeInTheDocument();
+  });
+});
+
+
+
+/*import React from 'react';
 import { configure, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import { MemoryRouter } from 'react-router-dom'
@@ -34,7 +53,7 @@ describe('App', () => {
       );
         expect(wrapper.find(Nav)).toHaveLength(1);
     });
-   });
+   });*/
 
   // it('El componente Home debe renderizar en la ruta / (Sólo en la ruta "/")', () => {
   //   const wrapper = mount(
@@ -63,4 +82,4 @@ describe('App', () => {
   //   expect(container.find(AddTodo)).toHaveLength(1);
   // });
 
-});
+//});

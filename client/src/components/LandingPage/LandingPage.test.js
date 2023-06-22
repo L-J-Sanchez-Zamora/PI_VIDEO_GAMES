@@ -1,4 +1,38 @@
-import React, {useState} from 'react';
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import LandingPage from './LandingPage';
+
+jest.mock('react-redux', () => ({
+  useDispatch: jest.fn(),
+}));
+
+describe('LandingPage', () => {
+  test('renders without error', () => {
+    render(
+      <BrowserRouter>
+        <LandingPage />
+      </BrowserRouter>
+    );
+    const landingPageElement = screen.getByTestId('landing-page');
+    expect(landingPageElement).toBeInTheDocument();
+  });
+
+  test('dispatches actions on mount', () => {
+    const mockDispatch = jest.fn();
+    useDispatch.mockReturnValue(mockDispatch);
+
+    render(
+      <BrowserRouter>
+        <LandingPage />
+      </BrowserRouter>
+    );
+
+    expect(mockDispatch).toHaveBeenCalledTimes(3);
+  });
+});
+/*import React, {useState} from 'react';
 import { configure, shallow, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import LandingPage from './LandingPage';
@@ -17,7 +51,7 @@ describe('<Landing Page />',() => {
     })
      it('Renderiza un boton con el "type" "submit"', () => {
        expect(wrapper.find('button[type="submit"]')).toHaveLength(1)
-    })
+    })*/
 
   //   it('Renderiza un label con el texto igual a "Description:"', () => {
   //     expect(wrapper.find('label').at(0).text()).toEqual('Description:');
@@ -41,5 +75,6 @@ describe('<Landing Page />',() => {
   //   })
   
    
-   })
-});
+  // })
+
+//});

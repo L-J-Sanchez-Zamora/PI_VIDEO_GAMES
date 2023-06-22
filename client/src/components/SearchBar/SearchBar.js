@@ -15,8 +15,8 @@ export default function SearchBar() {
 
     function handleSubmit(e) {
         e.preventDefault()
-        dispatch(getvgbyname(name)) 
-        setName("") 
+        dispatch(getvgbyname(name))
+        setName("")
     }
 
     return (

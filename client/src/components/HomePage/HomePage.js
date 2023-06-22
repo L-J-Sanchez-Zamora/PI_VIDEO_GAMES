@@ -15,7 +15,7 @@ export default function HomePage() {
   const allVgames = useSelector((state) => state.videogames);
   const allgenres = useSelector((state) => state.genres);
   const [currentPage, setCurrentPage] = useState(1);
-  const [vgamesPerPage, setVgamesPerPage] = useState(8);
+  const [vgamesPerPage, setVgamesPerPage] = useState(15);
   const lastVgameIndex = currentPage * vgamesPerPage;
   const firstVgIndex = lastVgameIndex - vgamesPerPage;
   const currentVgames = allVgames.slice(firstVgIndex, lastVgameIndex);
@@ -28,26 +28,38 @@ export default function HomePage() {
   function handleGenreFilter(e) {
     e.preventDefault();
     dispatch(genrefilter(e.target.value));
+
   }
 
   function handleOriginFilter(e) {
     dispatch(vgorigin(e.target.value));
-    setCurrentPage(1);
+
   }
 
   function handleShowAll(e) {
     dispatch(vgorigin('All'));
     dispatch(sortvgames('asc'));
+    //  setCurrentPage(1);
   }
 
   function handleSortvgames(e) {
     e.preventDefault();
     dispatch(sortvgames(e.target.value));
     setRender(`Order ${e.target.value}`);
+    //  setCurrentPage(1);
+  }
+
+  // Verificar si allVgames es un arreglo antes de llamar a sort()
+  if (Array.isArray(allVgames)) {
+    allVgames.sort();
+  } else {
+    return
   }
 
   return (
     <div className={stl.c1}>
+      <h6>Home</h6>
+      <h3>Explore the top-rated titles and stay on top of the ranking position of your favorite games. In addition, at Project Mundo Gamer you will be able to create your own games and share them with the largest community of players. Immerse yourself in an unparalleled gaming experience and become part of our passionate community at Project Mundo Gamer!</h3>
       <div className={stl.c2}>
         <div>
           <button className={stl.hpbot} onClick={handleShowAll}>
@@ -89,6 +101,9 @@ export default function HomePage() {
             <option value="API">Api Games</option>
           </select>
         </div>
+        <Link to="/">
+          <button className={stl.hpbot}>Landingpage</button>
+        </Link>
       </div>
       <div className={stl.c4}>
         <Paging
@@ -99,18 +114,19 @@ export default function HomePage() {
         />
       </div>
       <div className={stl.c5}>
-        {/*ACA NO MAPEO TODOS LOS VGAMES SINO SOLO LOS DE LA PAGINA ACTUAL del Slice */}
-        {currentVgames &&
-          currentVgames.map((p) => {
-            return (
-              <Fragment key={p.id}>
-                <Link to={`/videogame/${p.id}`}>
-                  <Vgcard name={p.name} image={p.image} genres={p.genres} rating={p.rating} />
-                </Link>
-              </Fragment>
-            );
-          })}
+        {Array.isArray(currentVgames) ? (
+          currentVgames.map((p) => (
+            <Fragment key={p.id}>
+              <Link to={`/videogame/${p.id}`}>
+                <Vgcard name={p.name} image={p.image} genres={p.genres} rating={p.rating} />
+              </Link>
+            </Fragment>
+          ))
+        ) : (
+          <h3>Game not found</h3>
+        )}
       </div>
     </div>
   );
 }
+

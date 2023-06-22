@@ -86,3 +86,17 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bold;
 }
+h6{
+  text-shadow: 5px 5px 6px #0a0a0a;
+  font-size:65px;
+  color: white;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+h3{
+  text-shadow: 5px 5px 6px #0a0a0a;
+  font-size:25px;
+  color: white;
+  font-weight: bold;
+}

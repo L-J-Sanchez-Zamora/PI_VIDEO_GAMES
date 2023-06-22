@@ -1,13 +1,13 @@
 import { GET_VIDEOGAMES } from '.';
-import axios from 'axios'
+import axios from 'axios';
 
 export default function getvgames() {
-    return async function (dispatch){
-        var result = await axios.get('http://localhost:3003/videogames'); 
+    return async function (dispatch) {
+        var result = await axios.get('http://localhost:3005/videogames');
         console.log(result)
-        return dispatch({ 
-            type: GET_VIDEOGAMES, 
+        return dispatch({
+            type: GET_VIDEOGAMES,
             payload: result.data
-        })                                                                                                 
+        })
     }
 }

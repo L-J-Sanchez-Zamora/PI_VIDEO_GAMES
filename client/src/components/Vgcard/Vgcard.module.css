@@ -1,56 +1,60 @@
 .container {
-    display:flex;
+    display: flex;
     flex-direction: row;
     justify-content: center;
-    align-content:space-around;
+    align-content: space-around;
     padding: 10px;
     margin: 0;
 
 }
+
 .card {
-    
+
     background-color: rgba(0, 0, 0, 0.992);
     height: 590px;
     width: 400px;
     margin: 5px;
     padding: 1px;
-    border:3px solid rgb(25, 24, 25);
-    border-radius:2rem;
+    border: 3px solid rgb(25, 24, 25);
+    border-radius: 2rem;
     transition: transform 0.2s ease;
     box-shadow: 0 5px 10px #aadb36;
 }
+
 .card:hover {
     transform: scale(1.05);
     box-shadow: 0 5px 20px #f3fbef;
-    
-  }
+
+}
 
 h4 {
     margin: 2px;
     margin-left: 1rem;
     margin-right: 1rem;
-    padding: 1px;  
-    color: rgb(251, 250, 250); 
+    padding: 1px;
+    color: rgb(251, 250, 250);
     font-size: 35px;
-    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Open Sans,Helvetica Neue,sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif;
 }
 
 p {
     margin: 5px;
-    padding: 1px; 
-    color: rgb(251, 250, 249); 
+    padding: 1px;
+    color: rgb(251, 250, 249);
     font-size: 25px;
-    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Open Sans,Helvetica Neue,sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif;
 }
- .imag {
-    border-radius:1.7rem;
+
+.imag {
+    border-radius: 1.7rem;
     height: 55%;
     width: 100%;
-    
- }
- span{
-    margin: 5px;
-    padding: 1px; 
-    font-size: 25px;
-    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Open Sans,Helvetica Neue,sans-serif;
+
+}
+
+span {
+    padding: 0;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif;
 }

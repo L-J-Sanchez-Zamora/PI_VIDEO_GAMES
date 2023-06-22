@@ -1,4 +1,42 @@
-import React, {useState} from 'react';
+import React from 'react';
+import { render, screen, fireEvent } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import AddVideogame from './AddVideogame';
+
+jest.mock('react-redux', () => ({
+  useDispatch: jest.fn(),
+  useSelector: jest.fn(),
+}));
+
+describe('AddVideogame', () => {
+  test('renders without error', () => {
+    render(
+      <BrowserRouter>
+        <AddVideogame />
+      </BrowserRouter>
+    );
+    const addVideogameElement = screen.getByTestId('add-videogame');
+    expect(addVideogameElement).toBeInTheDocument();
+  });
+
+  test('handles form submission', () => {
+    const mockDispatch = jest.fn();
+    useDispatch.mockReturnValue(mockDispatch);
+    useSelector.mockReturnValue([]);
+
+    render(
+      <BrowserRouter>
+        <AddVideogame />
+      </BrowserRouter>
+    );
+
+    fireEvent.click(screen.getByText('Add Game'));
+
+    expect(mockDispatch).toHaveBeenCalled();
+  });
+});
+/*import React, {useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { configure, shallow, mount } from 'enzyme';
@@ -45,4 +83,4 @@ describe('<AddVideogame />',() => {
        expect(wrapper.find('button[type="submit"]')).toHaveLength(1)
     })
   })
-});
+});*/

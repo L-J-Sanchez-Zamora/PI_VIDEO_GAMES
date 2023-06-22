@@ -3,11 +3,11 @@ import { GET_PLATFORMS } from '.';
 import axios from 'axios'
 
 export default function getplatforms() {
-    return async function (dispatch){
-        var result = await axios.get('http://localhost:3003/platforms'); 
-        return dispatch({ 
-            type: GET_PLATFORMS, 
+    return async function (dispatch) {
+        var result = await axios.get('http://localhost:3005/platforms');
+        return dispatch({
+            type: GET_PLATFORMS,
             payload: result.data
-        })                                                                                                 
+        })
     }
 }

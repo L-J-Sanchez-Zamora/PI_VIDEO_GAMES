@@ -7,8 +7,10 @@
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^13.1.1",
     "axios": "^1.2.2",
+    "node": "16.17.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.9.0",
     "react-redux": "^8.0.5",
     "react-router-dom": "^5.2.0",
     "react-scripts": "5.0.1",
@@ -44,8 +46,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
-  }
+  },
+  "description": ""
 }

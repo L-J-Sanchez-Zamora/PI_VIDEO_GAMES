@@ -1,4 +1,4 @@
-import {SORT_VGAMES} from '.';
+import { SORT_VGAMES } from '.';
 
 export default function sortvgames(payload) {
     return {

@@ -23,7 +23,7 @@ server.use((req, res, next) => {
 
 server.use('/', router);
 
-server.get("/",(req,res) => {
+server.get("/", (req, res) => {
   res.status(200).send("Welcome to API");
 });
 
